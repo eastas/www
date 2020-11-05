@@ -5,7 +5,6 @@ let config = {
 }
 let farmbg;
 let catimg, dog, henimg;
-//Jitter 类
 //云类
 
 class cloud {
@@ -92,22 +91,22 @@ class chicks {
 
 
     }
-    speak() {
+    // speak() {
 
-        if ((mouseX >= this.x && mouseX <= this.x + this.width) && (mouseY >= this.y && mouseY <= this.y + this.height)) {
-            // audioDom1.src = config.animal.chick;
-            // let song = loadSound("../audio/chicken.mp3");
+    //     if ((mouseX >= this.x && mouseX <= this.x + this.width) && (mouseY >= this.y && mouseY <= this.y + this.height)) {
+    //         // audioDom1.src = config.animal.chick;
+    //         // let song = loadSound("../audio/chicken.mp3");
 
-            song.play();
-            // audioDom.pause();
+    //         song.play();
+    //         // audioDom.pause();
 
-        } else {
-            song.pause();
+    //     } else {
+    //         song.pause();
 
-            // audioDom.play();
+    //         // audioDom.play();
 
-        }
-    }
+    //     }
+    // }
     move() {
 
         if (this.x > width / 3.9) {
@@ -497,19 +496,7 @@ class cats {
             // this.count++;
 
         }
-        // else {
-        //     if (this.y > height / 2.05) {
-
-        //     }else{
-
-
-        //                     this.x = width / 2.05;
-        //                     this.y = height / 3.5;
-
-        //     }
-
-
-        // }
+       
 
 
 
@@ -585,7 +572,6 @@ function preload() {
     failedfrog = loadImage('../images/farmscene/failedfrog.png');
     normalfrogimg = loadImage('../images/farmscene/normalfrog.png');
     // 加载叫声
-    // catSpeak = loadSound("", [successCallback], [errorCallback], [whileLoading]);
 
 
 }
