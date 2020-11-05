@@ -599,7 +599,7 @@ let frogsong;
 let chicksong;
 
 function setup() {
-    song = loadSound("../audio/chicken.mp3");
+    // song = loadSound("../audio/chicken.mp3");
 
     // frogsong = loadound("audio/frogCroak.wav");
 
@@ -658,7 +658,7 @@ function draw() {
         // chick[i].move();
         chick[i].display();
         chick[i].move();
-        chick[i].speak();
+        // chick[i].speak();
     }
     // chick.display();
     //
