@@ -599,13 +599,7 @@ let frogsong;
 let chicksong;
 
 function setup() {
-    // song = loadSound("../audio/chicken.mp3");
-
-    // frogsong = loadound("audio/frogCroak.wav");
-
-    // chicksong = loadSound(config.animal.chick);
-
-    // chicksong = loadSound('../audio/chicken.mp3');
+    
 
     createCanvas(windowWidth, windowHeight);
 
