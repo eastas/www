@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通的一天</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/font/iconfont.css" />
+
+</head>
+<style>
+    body {
+        /* background-color: rgb(81, 202, 156); */
+        background-color: rgba(0, 0, 0, 0.74);
+        background-color: rgba(3, 0, 17, 0.89);
+        /* cursor: url(''); */
+        /* pointer-events: none; */
+        /* cursor: none; */
+    }
+    
+    .snow {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        /* top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; */
+        /* background-color: rgba(95, 200, 241, 0.74); */
+        /* overflow: hidden; */
+        /* z-index: 9; */
+    }
+    
+    .snow>span {
+        position: fixed;
+        /* top: 0; */
+        /* top: -1em; */
+        display: inline-block;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.753);
+        /* animation: snow1 5s ease-in-out infinite; */
+        animation: rote 3s ease-in-out infinite;
+        user-select: none;
+        z-index: 1;
+        /* transition: all ease-in-out 5s; */
+    }
+    
+    @keyframes rote {
+        0% {
+            transform: rotate(0deg);
+            color: rgba(241, 241, 234, 0.541);
+        }
+        50% {
+            transform: rotate(360deg);
+            color: rgba(255, 254, 203, 0.74);
+        }
+        100% {
+            transform: rotate(-360deg);
+            color: rgba(241, 241, 234, 0.068);
+        }
+    }
+    
+    @keyframes snow1 {
+        0% {
+            transform-origin: center center;
+            color: rgba(255, 254, 203, 0.253);
+        }
+        30% {
+            transform-origin: center center;
+            /* transform: rotate(0deg); */
+            transform: translate3d(10vw, 10vh, 10px);
+            color: rgba(255, 254, 203, 0.74);
+        }
+        50% {
+            transform-origin: center center;
+            /* transform: rotate(360deg); */
+            transform: translate3d(-10vw, 40vh, -0px);
+            color: rgba(241, 241, 234, 0.295);
+        }
+        70% {
+            transform-origin: center center;
+            /* transform: rotate(360deg); */
+            transform: translate3d(10vw, 70vh, 10px);
+            color: rgba(241, 241, 234, 0.068);
+        }
+        100% {
+            transform-origin: center center;
+            transform: translate3d(100vw, 100vh, 20px);
+            color: rgba(241, 241, 234, 0.068);
+        }
+    }
+    /* -------------------- */
+    
+    nav {
+        position: absolute;
+        top: 30%;
+        /* border: 1px solid red; */
+        width: 100%;
+        z-index: 2;
+    }
+    /* xue */
+    
+    .nav-box {
+        width: 100vw;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        /* flex-flow: column; */
+        justify-content: space-evenly;
+    }
+    
+    .nav-box>li {
+        flex-grow: 0;
+        position: relative;
+        width: 28vw;
+        height: 26vw;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.788);
+        /* cursor: pointer; */
+        cursor: none;
+        /* box-shadow: -4px -6px 30px rgba(223, 223, 223, 0.671) inset; */
+        box-shadow: -4px -8px 30px rgba(189, 217, 228, 0.671) inset;
+        /* animation: move .5s infinite; */
+        /* box-shadow: 0 0 8px rgb(209, 209, 209) ; */
+        /* border: 1px solid rgb(71, 70, 70); */
+        /* animation: move 1s infinite; */
+        transition: all ease-in-out 1s;
+    }
+    
+    .nav-box>li:nth-child(2n+1) {
+        animation: move1 2.4s infinite;
+        animation: move1 3.4s infinite;
+        transition: all ease-in-out .5s;
+    }
+    
+    .nav-box>li:nth-child(2n) {
+        animation: move1 2.8s infinite;
+        animation: move1 3.8s infinite;
+        transition: all ease-in-out .5s;
+    }
+    
+    .nav-box>li:nth-child(3n) {
+        animation: move1 2.5s infinite;
+        animation: move1 3.5s infinite;
+        transition: all ease-in-out .5s;
+        user-select: none;
+    }
+    /* .nav-box>li:hover {
+        background-color: #fff;
+        box-shadow: 0 0 8=px rgb(255, 250, 227);
+        
+        z-index: 9;
+    } */
+    
+    .nav-box>.cur {
+        /* box-shadow: 0 0 10px rgb(209, 209, 209); */
+        background-color: #fff;
+        box-shadow: 0 0 8=px rgb(255, 250, 227);
+        /* 调节比例 */
+        /* transform: scale(1.4); */
+        z-index: 9;
+    }
+    
+    .nav-box>li:hover div {
+        /* box-shadow: 0 0 10px rgb(209, 209, 209); */
+        background-color: rgba(255, 255, 255, 0);
+    }
+    
+    .nav-box>li img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        user-select: none;
+        /* border: 1px solid red; */
+    }
+    
+    .nav-box>li:nth-child(2n+1) img {
+        animation: breath 6s infinite;
+        transition: all ease-in-out;
+        /* border: 1px solid red; */
+    }
+    
+    .nav-box>li:nth-child(2n+2) img {
+        animation: breath 8s infinite;
+        /* border: 1px solid red; */
+    }
+    
+    .nav-box>li:nth-child(2n+3) img {
+        animation: breath 7s infinite;
+        /* border: 1px solid red; */
+    }
+    
+    .nav-box>li div {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(27, 20, 58, 0.459);
+        border-radius: 50%;
+        /* border-radius: 50%;
+        border: 1px solid red; */
+    }
+    
+    .nav-box>li span {
+        font-size: 16px;
+        color: rgb(255, 254, 203);
+        user-select: none;
+        transform: translateY(-40px);
+    }
+    
+    @keyframes move1 {
+        0% {
+            transform: translateY(0%);
+            height: 26vw;
+            /* width: 27vw; */
+        }
+        /* 25%{
+            transform: translateY(-4%);
+        } */
+        /* 50%{
+            transform: translateY(0%);
+        } */
+        65% {
+            transform: translateY(-20%);
+            height: 26vw;
+            /* width: 28vw; */
+        }
+        100% {
+            transform: translateY(0%);
+            height: 26vw;
+            /* width: 27vw; */
+        }
+    }
+    
+    @keyframes move2 {
+        0% {
+            transform: translateY(0%);
+            height: 49vw;
+            width: 50vw;
+        }
+        /* 25%{
+            transform: translateY(-4%);
+        } */
+        /* 50%{
+            transform: translateY(0%);
+        } */
+        65% {
+            transform: translateY(-10%);
+            height: 47vw;
+            width: 48vw;
+        }
+        100% {
+            transform: translateY(0%);
+            height: 49vw;
+            width: 50vw;
+        }
+    }
+    
+    @keyframes breath {
+        0% {
+            box-shadow: 0 0 10px rgba(255, 250, 227, 0);
+        }
+        50% {
+            box-shadow: 0 0 20px rgba(255, 250, 227, 0.397);
+        }
+        100% {
+            box-shadow: 0 0 10px rgba(255, 250, 227, 0);
+        }
+    }
+    
+    @media screen and (max-width: 500px) {
+        nav {
+            position: relative;
+            top: 10vh;
+            /* border: 1px solid red; */
+            width: 100%;
+        }
+        .nav-box>li img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            /* animation: breath 10s infinite; */
+            /* border: 1px solid red; */
+        }
+        .nav-box {
+            /* width: 80vw; */
+            /* margin: 0 auto; */
+            display: flex;
+            flex-flow: column nowrap;
+            /* flex-flow: column; */
+            align-items: center;
+            /* justify-content: flex-start; */
+        }
+        .nav-box>li {
+            flex-grow: 1;
+            /* position: relative; */
+            width: 60vw;
+            height: 60vw;
+            margin-bottom: 10vh;
+            border-radius: 50%;
+            /* background-color: rgb(138, 138, 138); */
+            cursor: none;
+            /* border: 1px solid rgb(71, 70, 70); */
+        }
+        .nav-box>li:nth-child(2n+1) {
+            animation: move2 2.4s infinite;
+            transition: all ease-in-out .5s;
+        }
+        .nav-box>li:nth-child(2n) {
+            animation: move2 2.8s infinite;
+            transition: all ease-in-out .5s;
+        }
+        .nav-box>li:nth-child(3n) {
+            animation: move2 2.5s infinite;
+            transition: all ease-in-out .5s;
+            user-select: none;
+        }
+    }
+    
+    .cursor {
+        display: inline-block;
+        width: 50px;
+        /* height: 32px; */
+        /* background: url(images/bullscence/sun.png) center no-repeat; */
+        /* background-size: cover; */
+        position: fixed;
+        /* border: 1px solid red; */
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+        border-radius: 50%;
+        box-shadow: 0 0 20px rgb(253, 250, 211);
+        cursor: pointer;
+        animation: rote 18s ease-in-out infinite;
+        user-select: none;
+    }
+
+
+</style>
+
+<body class="iconfont snow " id="snow">
+    <section class="indexMask">
+
+        
+    </section>
+
+    <img class="cursor" src="images/bullscence/sun.png" alt="">
+    <nav>
+        <ul class="nav-box">
+            <li class="item " id="sence1">
+                <div><span>快乐农场</span></div>
+                <img src="images/farmscene/farmbgAll.png" alt="">
+            </li>
+            <li class="item" id="sence2">
+                <div id="sence2"><span>夜晚浮游</span></div>
+
+                <img src="images/nightscence/nightAll.png" alt="">
+            </li>
+            <li class="item" id="sence3">
+                <div id="sence3"><span>牛儿听话</span></div>
+
+                <img src="images/bullscence/bullfirstbg.png" alt="">
+            </li>
+        </ul>
+    </nav>
+    <!-- <audio src="audio/bgm/first.mp3" autoplay="auto"></audio> -->
+    <!-- <section id="snow" class="snow"></section> -->
+    
+    <script>
+        let sence1BoxDom = document.querySelector('#sence1');
+        let sence2BoxDom = document.querySelector('#sence2');
+        let sence3BoxDom = document.querySelector('#sence3');
+
+        let sence1Dom = document.querySelector('#sence1>div');
+        let tip1Dom = document.querySelector('#sence1 span');
+        let sence2Dom = document.querySelector('#sence2>div');
+        let tip2Dom = document.querySelector('#sence2 span');
+        let sence3Dom = document.querySelector('#sence3>div');
+        let tip3Dom = document.querySelector('#sence3 span');
+        let bodyDom = document.querySelector('body');
+        let cursorDom = document.querySelector('.cursor');
+        let flag = false;
+        sence1Dom.addEventListener("click", function() {
+            if (flag) {
+
+                window.location.replace("html/farm.html");
+            } else {
+                tip1Dom.innerHTML = '我需要阳光 *-*';
+            }
+
+        })
+        sence2Dom.addEventListener("click", function() {
+            if (flag) {
+
+                window.location.replace("html/night.html");
+            } else {
+                tip2Dom.innerHTML = '太阳，太阳...';
+            }
+
+        })
+        sence3Dom.addEventListener("click", function() {
+                if (flag) {
+
+                    window.location.replace("html/bull.html");
+                } else {
+                    tip3Dom.innerHTML = "太阳都没来上班^c^";
+                }
+
+            })
+            // -------
+        sence1Dom.addEventListener("mouseover", function() {
+            if (flag) {
+
+                sence1BoxDom.classList.add('cur');
+                tip1Dom.innerHTML = '太阳，太阳，耶 ';
+                setTimeout(function() {
+                        tip1Dom.innerHTML = '我想冒险，快点击我开始吧！！';
+                    }, 4000)
+                    // window.location.replace("html/farm.html");
+                setTimeout(function() {
+                    sence1BoxDom.classList.remove('cur');
+                    tip1Dom.innerHTML = '太阳被封印了，快去救它吧';
+                }, 8000);
+            } else {
+                tip1Dom.innerHTML = '^_^ HELLO';
+            }
+
+        })
+        sence2Dom.addEventListener("mouseover", function() {
+            if (flag) {
+                sence2BoxDom.classList.add('cur');
+                tip2Dom.innerHTML = '我亮了，好看不 ';
+                setTimeout(function() {
+                    tip2Dom.innerHTML = '咦，你怎么还在这里，快去冒险啦';
+                }, 4000);
+                setTimeout(function() {
+                    sence2BoxDom.classList.remove('cur');
+                    tip2Dom.innerHTML = '我们需要太阳，快去救它吧';
+
+                }, 9000);
+                // window.location.replace("html/bull.html");
+            } else {
+                tip2Dom.innerHTML = 'o_o 你是  zZ ';
+            }
+
+        })
+        sence3Dom.addEventListener("mouseover", function() {
+                if (flag) {
+                    sence3BoxDom.classList.add('cur');
+
+                    tip3Dom.innerHTML = '谢谢，谢谢你 ';
+                    setTimeout(function() {
+                        tip3Dom.innerHTML = '太阳就要封印啦，抓紧时间哦';
+                    }, 4000);
+                    setTimeout(function() {
+                        sence3BoxDom.classList.remove('cur');
+                        tip3Dom.innerHTML = '快让太阳动起来吧！';
+
+                    }, 6000);
+                    // window.location.replace("html/night.html");
+                } else {
+                    tip3Dom.innerHTML = '我在 (¦3[▓▓] ';
+                }
+
+            })
+            // -------
+        sence1Dom.addEventListener("mouseleave", function() {
+            if (flag) {
+                sence1BoxDom.classList.remove('cur');
+                tip1Dom.innerHTML = '我哭了，你呢';
+                setTimeout(function() {
+                    tip1Dom.innerHTML = '快乐农场';
+                }, 4000)
+            } else {
+                tip1Dom.innerHTML = '快乐农场';
+            }
+
+        })
+        sence2Dom.addEventListener("mouseleave", function() {
+            if (flag) {
+                sence2BoxDom.classList.remove('cur');
+                tip2Dom.innerHTML = '真的要离开了吗I_I';
+                setTimeout(function() {
+                    tip2Dom.innerHTML = '夜晚浮游';
+                }, 4000)
+
+
+                // window.location.replace("html/bull.html");
+            } else {
+                tip2Dom.innerHTML = '夜晚浮游';
+            }
+
+        })
+        sence3Dom.addEventListener("mouseleave", function() {
+            if (flag) {
+                sence3BoxDom.classList.remove('cur');
+                tip3Dom.innerHTML = '再见啦I_I';
+                setTimeout(function() {
+                    tip3Dom.innerHTML = '牛儿听话';
+                }, 4000)
+
+                // window.location.replace("html/night.html");
+            } else {
+                tip3Dom.innerHTML = '牛儿听话';
+            }
+
+        })
+
+        // 太阳
+        bodyDom.removeEventListener('mousemove', function(e) {
+            let x = e.pageX;
+            let y = e.pageY;
+
+            cursorDom.style.cursor = "none";
+            setTimeout(function() {
+
+                cursorDom.style.top = y - 16 + "px";
+                cursorDom.style.left = x - 16 + "px";
+            }, 100);
+        });
+        bodyDom.addEventListener('mousemove', function(e) {
+            if (flag) {
+                let x = e.pageX;
+                let y = e.pageY;
+
+                cursorDom.style.cursor = "none";
+                setTimeout(function() {
+
+                    cursorDom.style.top = y - 16 + "px";
+                    cursorDom.style.left = x - 16 + "px";
+                }, 100);
+            };
+        });
+
+
+        cursorDom.addEventListener('click', function(e) {
+            if (flag) {
+
+                let x = window.innerWidth - 60;
+                let y = 10;
+                flag = false;
+                // console.log(2);
+                cursorDom.style.cursor = "none";
+
+
+                cursorDom.style.top = y + "px";
+                cursorDom.style.left = x + "px";
+                // console.log(42);
+
+            } else {
+
+                flag = true;
+                console.log(1);
+                cursorDom.style.cursor = "none";
+                setTimeout(function() {
+
+                    flag = false;
+                    tip2Dom.innerHTML = '太阳又被封印啦I_I';
+
+
+                }, 13000);
+                setTimeout(function() {
+
+                    flag = false;
+                    tip1Dom.innerHTML = '要是太阳不听话了，就按按键盘试试';
+                    tip2Dom.innerHTML = '夜晚浮游';
+
+
+
+                }, 16000);
+                setTimeout(function() {
+
+                    flag = false;
+                    tip3Dom.innerHTML = '对的，加油啦';
+                    tip1Dom.innerHTML = '快乐农场';
+
+
+
+
+                }, 19000);
+                setTimeout(function() {
+
+                    flag = false;
+                    tip3Dom.innerHTML = '牛儿听话';
+
+
+                }, 21000);
+
+            }
+        }, false);
+
+        cursorDom.addEventListener('mouseover', function(e) {
+            // let x = window.innerWidth - 10;
+            // let y = 10;
+            // flag = false;
+            // // console.log(2);
+            cursorDom.style.cursor = "none";
+
+
+            // cursorDom.style.top = y + "px";
+            // cursorDom.style.left = x + "px";
+            // console.log(42);
+
+        })
+        bodyDom.addEventListener('keyup', function(e) {
+            let x = window.innerWidth - 60;
+            let y = 10;
+            flag = false;
+            // console.log(2);
+            tip1Dom.innerHTML = '快乐农场';
+            tip2Dom.innerHTML = '夜晚浮游';
+            tip3Dom.innerHTML = '牛儿听话';
+
+            cursorDom.style.cursor = "none";
+
+
+            cursorDom.style.top = y + "px";
+            cursorDom.style.left = x + "px";
+            console.log(42);
+
+        })
+    </script>
+    <!--雪花飘落 -->
+    <script>
+        let json = {
+            snow: [
+                "&#xe601;",
+                "&#xe6ff;",
+                "&#xe609;",
+                "&#xe65b;",
+                "&#xe62a;",
+                "&#xe674;",
+                "&#xe68d;",
+                "&#xe697;",
+                "&#xe612;",
+                "&#xe608;",
+            ],
+        };
+        let snowBOX = document.querySelector("#snow");
+
+        let snowNumber = 30;
+        let snowStyle = json.snow;
+        let maxstep = 2;
+        snowsize();
+
+        //   一次创建多少个雪花
+        function snowsize() {
+            let i = 0;
+            let timer = setInterval(() => {
+                if (i <= snowNumber) {
+                    creatSnow();
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, 100);
+        }
+
+        function fallSpeed(snowBody) {
+            let step = Math.ceil(Math.random() * maxstep);
+            let left_random = Math.random() * window.innerWidth;
+            let height = window.innerHeight;
+            let top = -20;
+            let timer = setInterval(() => {
+                if (top < height) {
+                    snowBody.style.top = top + step + "px";
+                    top += step;
+                } else {
+                    // 第二次下落时初始化雪花大小，落下步数，x轴上下落位置（对视口宽度及时适应）
+                    left_random = Math.random() * window.innerWidth;
+                    //初始化视口的高度
+                    height = window.innerHeight;
+                    //初始 X轴  雪花下落位置
+                    snowBody.style.left = left_random + "px";
+                    //初始 雪花大小
+                    snowBody.style.fontSize = Math.random() * 30 + "px";
+                    //初始化 层叠
+                    snowBody.style.zIndex = Math.floor(Math.random() * 4);
+
+                    //初始化 移动步数
+                    step = Math.ceil(Math.random() * maxstep);
+                    top = -20;
+
+                }
+            }, 6);
+        }
+
+        function creatSnow() {
+            let item = Math.floor(Math.random() * snowStyle.length);
+            let snowBody = document.createElement("span");
+            snowBody.innerHTML = snowStyle[item];
+            snowBOX.appendChild(snowBody);
+            // // 随机改变雪花的原始大小
+            // snowBody.style.fontSize = Math.random() * 30 + "px";
+            // 雪花在顶部随机出现位置
+            // let left_random = Math.random() * window.innerWidth;
+            // snowBody.style.left = left_random + "px";
+            snowSite(snowBody);
+            fallSpeed(snowBody);
+        }
+
+        // function snowSize() {
+        //     // 随机改变雪花的原始大小
+        //     snowBody.style.fontSize = Math.random() * 30 + "px";
+        //     snowBody.style.zIndex = Math.floor(Math.random()*3);
+
+        // }
+
+        function snowSite(snowBody) {
+            // 雪花在顶部随机出现位置
+            let left_random = Math.random() * window.innerWidth;
+            snowBody.style.left = left_random + "px";
+        }
+    </script>
+
+</body>
+
+</html>

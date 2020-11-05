@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平凡的一天</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <style>
+        #defaultCanvas0 {
+            position: absolute;
+            /* top: 20px; */
+            left: 50%;
+            transform: translate(-50%, 0);
+            /* width: 80vw; */
+        }
+        
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        input[type='button'] {
+            position: fixed;
+            bottom: 3.0417vw;
+            left: 1.0417vw;
+        }
+        
+        img {
+            position: fixed;
+            z-index: 2;
+        }
+        
+        .bull {
+            bottom: 0;
+            left: 11.9vw;
+            width: 10.4167vw;
+            min-width: 100px;
+            animation: bullmove 20s ease infinite;
+            cursor: pointer;
+        }
+        
+        .rake {
+            bottom: 0.7813vw;
+            left: 2.2917vw;
+            width: 16.3542vw;
+            min-width: 100px;
+            animation: bullmove 20s ease infinite;
+        }
+        
+        .farmer {
+            bottom: 1px;
+            left: 0;
+            width: 3.5417vw;
+            min-width: 40px;
+            animation: bullmove 20s ease infinite;
+        }
+        
+        .butterfly {
+            /* width: 10vw;
+            max-width: 40px; */
+            z-index: 1;
+            /* top: 40vh;
+            left: 2vw; */
+        }
+        
+        @keyframes bullmove {
+            0% {
+                transform: translateX(-22.3438vw);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+        
+        .tip {
+            border: 1px solid rebeccapurple;
+            position: fixed;
+            padding: 0.5208vw;
+            bottom: 160px;
+            left: 11.9vw;
+            color: rebeccapurple;
+            /* width: 10.4167vw; */
+            min-width: 100px;
+            animation: bullmove 20s ease infinite;
+            border-radius: 5.2083vw;
+            z-index: 3;
+        }
+        
+        .qs {
+            position: fixed;
+            top: 20px;
+            z-index: 4;
+            background-color: rgba(255, 255, 255, 0.445);
+            /* border-bottom-right-radius: 20px; */
+            border-top-right-radius: 20px;
+        }
+        
+        .qs input {
+            background-color: rgba(255, 255, 255, 0);
+            border: 1px solid rgba(180, 180, 180, 0.123);
+            height: 20px;
+            display: inline-block;
+            /* width: 100px; */
+            padding: 0 1em;
+        }
+        img{
+            position: absolute;
+            
+        }
+        .grayCloud {
+            width: 23.9583vw;
+            top: 61.7188vw;
+            left: 64.4792vw;
+            z-index: 3;
+            animation: cloudmove 5s infinite;
+            transition: all 1s;
+        }
+        .grayCloud2 {
+            width: 38.0208vw;
+            top: 26.5625vw;
+            right: 0vw;
+            z-index: 0;
+            animation: cloudmove 8s infinite;
+            transition: all 1s;
+        }
+        
+        .grayCloud22 {
+            width: 38.0208vw;
+            top: 56.5625vw;
+            left: 0;
+            z-index: 3;
+            animation: cloudshake 8s infinite;
+            transition: all 1s;
+        }
+        
+        .grayCloud4 {
+            width: 38.0208vw;
+            top: 45.4167vw;
+            left: 2.5vw;
+            z-index: 2;
+            animation: cloudmove 10s infinite;
+            transition: all 1s;
+        }
+        
+        .grayCloud6 {
+            width: 38.0208vw;
+            top: 45.4167vw;
+            left: 2.5vw;
+            z-index: 3;
+            animation: cloudmove 5s infinite;
+            transition: all 1s;
+        }
+        
+        .whiteCloud {
+            width: 27.6042vw;
+            top: 52.8125vw;
+            left: 21.25vw;
+            z-index: 2;
+            animation: cloudshake 6s infinite;
+            transition: all 1s;
+        }
+        
+        .whiteCloud2 {
+            width: 39.5833vw;
+            top: 64.8958vw;
+            left: 44.7396vw;
+            z-index: 3;
+            animation: cloudshake 7s infinite;
+            transition: all 1s;
+        }
+        
+        .grayCloud3 {
+            width: 30.8333vw;
+            top: 23.4375vw;
+            left: 0;
+            z-index: 3;
+            animation: cloudmove 10s infinite;
+            transition: all 1s;
+        }
+        
+        .grayCloud32 {
+            width: 30.8333vw;
+            top: 53.4375vw;
+            left: 0;
+            z-index: 3;
+            animation: cloudmove 6s infinite;
+            transition: all 3s;
+        }
+        
+        .grayCloud5 {
+            width: 50.8333vw;
+            top: 70.4375vw;
+            left: 0;
+            z-index: 3;
+            animation: cloudmove 8s infinite;
+            transition: all 5s;
+        }
+        
+        .deepcloud {
+            width: 26.0417vw;
+            top: 50.4167vw;
+            right: 7.0313vw;
+            z-index: 2;
+            animation: cloudmove 6s infinite;
+            transition: all 1s;
+        }
+        @media screen and (max-width: 1000px) {
+            .tip {
+                font-size: 12px;
+                bottom: 100px;
+            }
+            input[type='button'] {
+                bottom: 5vw;
+            }
+        }
+        @keyframes cloudmove {
+            0% {
+                transform: translate(-100vw, 0%);
+                /* left: 0; */
+            }
+            /* 50% {
+                transform: translate(110%, -20%);
+                /* left: 100%; */
+            100% {
+                transform: translate(100vw, 0%);
+                /* left: 0; */
+            }
+        }
+    </style>
+    <script src="../js/p5.min.js"></script>
+    <!-- <script src="../js/p5.sound.js"></script> -->
+    <script src="../js/bullsketch.js"></script>
+</head>
+
+<body>
+    <audio src="audio/bgm/two.mp3" autoplay="auto"></audio>
+
+    <img class="bull" src="../images/bullscence/bull.gif" alt="">
+    <img class="rake" src="../images/bullscence/rake.png" alt="">
+    <img class="farmer" src="../images/bullscence/farmer.gif" alt="">
+    <div class="tip">可以帮我数数有几只蝴蝶吗?
+        <!--  -->
+    </div>
+    <div class="qs">
+        <!-- <span class="tip2">这里有几只蝴蝶？</span>  -->
+        <input type="number" placeholder="这里有几只蝴蝶？">
+    </div>
+    <section class="butterflyBox">
+
+    </section>
+
+    <main>
+    </main>
+    <audio class="audio" src="../audio/bullgamebgm.mp3" autoplay="auto" loop="loop"></audio>
+    <input type="button" value="返回首页">
+    <script>
+        let bullDom = document.querySelector('.bull');
+        let btnDom = document.querySelector("input[type='button']");
+        let tipDom = document.querySelector('.tip');
+        // let tip2Dom = document.querySelector('.tip2');
+        let textDom = document.querySelector("input[type='number']");
+        let butterflyBoxDom = document.querySelector('.butterflyBox');
+        // let getNum = textDom.value;
+        let num = Math.floor(Math.random() * 26) + 3;
+
+        btnDom.addEventListener('click', function() {
+            window.location.replace('../index.html');
+
+        });
+        window.addEventListener('resize', function() {
+
+            window.location.reload('farm.html');
+
+        });
+        console.log(num);
+        drawButterFly(num);
+
+        function drawButterFly(num) {
+            console.log(num + "num");
+            let tem = "";
+            let top, left, width;
+            for (let i = 0; i < num; i++) {
+                width = Math.floor(Math.random() * 50 + 8);
+                left = Math.floor(Math.random() * window.innerWidth);
+                top = Math.floor(Math.random() * window.innerHeight);
+
+                let temple = `<img class="butterfly" style="top:${top}px;left:${left}px;width:${width}px" src="../images/bullscence/butterfly.gif" alt="">`;
+                tem += temple;
+
+
+
+            }
+            // console.log(tem);
+
+            butterflyBoxDom.innerHTML = tem;
+
+        }
+        textDom.addEventListener('keyup', function() {
+            let getNum = textDom.value;
+
+            console.log(getNum);
+            if (Number(getNum) == num) {
+                tipDom.style.color = "green";
+                tipDom.style.fontSize = "12px";
+                tipDom.innerHTML = "恭喜你答对了，现在请帮帮耕完这块地吗？点击我开始吧";
+                bullDom.addEventListener('click', function() {
+                    window.location.replace('bullgame.html');
+
+                })
+
+
+
+            } else {
+                tipDom.style.color = "red";
+                tipDom.innerHTML = "哦豁，你错咯，再仔细数哈看看"
+
+
+            }
+
+        })
+    </script>
+</body>
+
+</html>
