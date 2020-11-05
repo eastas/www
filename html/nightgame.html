@@ -586,11 +586,16 @@
 
         // console.log(randNumNotCover(5) );
         let showNum = []; //序号组
-        setTimeout(function () {
+        window.onload=(function (params) {
 
-            gameint(4); //游戏初始化
+
+            setTimeout(function () {
+    
+                gameint(4); //游戏初始化
+                
+            },2000);
             
-        },1000)
+        })
 
         function gameint(usecount) {
             submitbtnDom.value = "确定";
